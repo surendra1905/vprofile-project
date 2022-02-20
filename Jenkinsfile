@@ -56,11 +56,11 @@ pipeline {
         stage('CODE ANALYSIS with SONARQUBE') {
           
 		  environment {
-             scannerHome = tool 'sonarscanner4'
+             scannerHome = tool '192.168.159.132'
           }
 
           steps {
-            withSonarQubeEnv('sonar-pro') {
+            withSonarQubeEnv('192.168.159.132') {
                sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
                    -Dsonar.projectName=vprofile-repo \
                    -Dsonar.projectVersion=1.0 \
